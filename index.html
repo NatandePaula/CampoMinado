@@ -3,6 +3,7 @@
     <head>
         <title></title>
         <script src="js/campo-minado.js"></script>
+        <script src="js/script.js"></script>
     </head>
     <body>
         <div id="exibir-execucao"></div>
@@ -15,6 +16,25 @@
             document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Tabuleiro() + '</pre>';
             
             // Realize sua codificação a partir deste ponto, boa sorte!
+
+           
+
+            
+            
+            while(campoMinado.JogoStatus() == 0){
+                document.getElementById('exibir-execucao').innerHTML += '<pre>' + '----------- Status: Jogo em aberto -----------' + '</pre>';
+                document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Tabuleiro() + '</pre>';
+                //document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Jogo[0][8] + '</pre>';
+
+                break;
+            }
+            matriz= new Array(9);
+            matriz = stringParaMatriz();
+            var linha = new Array(10);
+            var coluna = new Array(10);
+            matriz[0][0] =3;
+            procuraBombas(matriz,linha,coluna);
+            
         </script>
     </body>
 </html>
