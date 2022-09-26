@@ -81,7 +81,7 @@ function CampoMinado() {
         {
             linha--;
             coluna--;
-
+            
             if (Status == 2 || Solucao[linha][coluna] == "*")
             {
                 Jogo[linha][coluna] = Solucao[linha][coluna];

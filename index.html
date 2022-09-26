@@ -3,7 +3,7 @@
     <head>
         <title></title>
         <script src="js/campo-minado.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/funcoes.js"></script>
     </head>
     <body>
         <div id="exibir-execucao"></div>
@@ -20,20 +20,40 @@
            
 
             
-            
-            while(campoMinado.JogoStatus() == 0){
+            var x=0;
+            while(x<9){
+           // while(campoMinado.JogoStatus() == 0){
                 document.getElementById('exibir-execucao').innerHTML += '<pre>' + '----------- Status: Jogo em aberto -----------' + '</pre>';
                 document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Tabuleiro() + '</pre>';
                 //document.getElementById('exibir-execucao').innerHTML += '<pre>' + campoMinado.Jogo[0][8] + '</pre>';
 
-                break;
+
+                matriz =stringParaMatriz(campoMinado.Tabuleiro());
+                //var linha = new Array(10);
+                //var coluna = new Array(10);
+            
+
+
+                procuraBombas(matriz);
+
+                 
+                var i=0,j=0;
+                for(i=0;i<9;i++){
+                    for(j=0;j<8;j++){
+                        if(matriz[i][j] == "A"){
+                           // campoMinado.Abrir(i+1,j+1);
+                            
+            
+                        }
+                    }
+                }
+                console.log(matriz);
+                //break;
+                x ++;
+                
+    
             }
-            matriz= new Array(9);
-            matriz = stringParaMatriz();
-            var linha = new Array(10);
-            var coluna = new Array(10);
-            matriz[0][0] =3;
-            procuraBombas(matriz,linha,coluna);
+            
             
         </script>
     </body>
